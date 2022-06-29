@@ -1,0 +1,36 @@
+POST http://127.0.0.1:8000/api/v1/auth/registro
+Content-Type: application/json
+Accept: application/json
+
+{
+    "name": "Admin",
+    "email": "admin@gmail.com",
+    "password": "admin123",
+    "c_password": "admin123"
+}
+
+#### LOGIN
+
+POST http://127.0.0.1:8000/api/v1/auth/login
+Content-Type: application/json
+Accept: application/json
+
+{
+    "email": "admin@gmail.com",
+    "password": "admin123"
+}
+
+#### PERFIL
+
+GET http://127.0.0.1:8000/api/v1/auth/perfil
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 7|NIrS2wA87cYm76FUIoPSuyV9eJIxhDiCQjP7K2pB
+
+
+#### LOGOUT
+
+POST http://127.0.0.1:8000/api/v1/auth/logout
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 7|NIrS2wA87cYm76FUIoPSuyV9eJIxhDiCQjP7K2pB
