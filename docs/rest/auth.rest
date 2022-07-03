@@ -1,12 +1,14 @@
+#### REGISTRO
+
 POST http://127.0.0.1:8000/api/v1/auth/registro
 Content-Type: application/json
 Accept: application/json
 
 {
-    "name": "Admin",
-    "email": "admin@gmail.com",
-    "password": "admin123",
-    "c_password": "admin123"
+    "name": "Alvaro",
+    "email": "alvaro@gmail.com",
+    "password": "alvaro123",
+    "c_password": "alvaro123"
 }
 
 #### LOGIN
