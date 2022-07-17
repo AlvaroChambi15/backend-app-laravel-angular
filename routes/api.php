@@ -38,3 +38,7 @@ Route::middleware("auth:sanctum")->group(function () {
     Route::apiResource("categoria", CategoriaController::class);
     Route::apiResource("producto", ProductoController::class);
 });
+
+Route::get("/no_autorizado", function () {
+    return response()->json(["mensaje" => "No estas autorizado!"]);
+})->name("login");

@@ -83,12 +83,13 @@ class CategoriaController extends Controller
      * @param  \App\Models\Categoria  $categoria
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateCategoriaRequest $request, Categoria $categoria)
+    public function update(Request $request,  $id)
     {
         $request->validate([
-            "nombre" => "required|unique:categorias,nombre,$categoria->id"
+            "nombre" => "required|unique:categorias,nombre,$id"
         ]);
 
+        $categoria = Categoria::find($id);
         $categoria->nombre = $request->nombre;
         $categoria->descripcion = $request->descripcion;
 
@@ -103,9 +104,16 @@ class CategoriaController extends Controller
      * @param  \App\Models\Categoria  $categoria
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Categoria $categoria)
+    public function destroy($id)
     {
-        $categoria->delete();
-        return response()->json(["mensaje" => "Categoria Eliminada!"], 200);
+        $categoria = Categoria::find($id);
+
+        $eliminacion = $categoria->delete();
+
+        if ($eliminacion) {
+            return response()->json(["mensaje" => "Categoria Eliminada!"], 200);
+        } else {
+            return response()->json(["mensaje" => "Salio algo mal!"], 204);
+        }
     }
 }
