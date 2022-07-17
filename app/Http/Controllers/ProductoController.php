@@ -14,7 +14,9 @@ class ProductoController extends Controller
      */
     public function index()
     {
-        //
+        $productos = Producto::paginate(10);
+
+        return response()->json($productos, 200);
     }
 
     /**
@@ -24,7 +26,7 @@ class ProductoController extends Controller
      */
     public function create()
     {
-        //
+        // NO USAMOS CREATE POR QUE ESTAMOS USANDO ANGULAR PARA EL FRONTEND
     }
 
     /**
@@ -35,7 +37,20 @@ class ProductoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            "nombre" => "required|min:3|max:200",
+            "categoria_id" => "required"
+        ]);
+        // GUARDAR
+        $producto = new Producto;
+        $producto->nombre = $request->nombre;
+        $producto->stock = $request->stock;
+        $producto->precio = $request->precio;
+        $producto->descripcion = $request->descripcion;
+        $producto->categoria_id = $request->categoria_id;
+        $producto->save();
+
+        return response()->json(["mensaje" => "Producto Registrado"], 201);
     }
 
     /**
@@ -46,7 +61,7 @@ class ProductoController extends Controller
      */
     public function show(Producto $producto)
     {
-        //
+        return response()->json($producto, 200);
     }
 
     /**
@@ -57,7 +72,7 @@ class ProductoController extends Controller
      */
     public function edit(Producto $producto)
     {
-        //
+        // ESTE TAMPOCO SE USA
     }
 
     /**
@@ -69,7 +84,19 @@ class ProductoController extends Controller
      */
     public function update(Request $request, Producto $producto)
     {
-        //
+        $request->validate([
+            "nombre" => "required|min:3|max:200",
+            "categoria_id" => "required"
+        ]);
+        // MODIFICAR
+        $producto->nombre = $request->nombre;
+        $producto->stock = $request->stock;
+        $producto->precio = $request->precio;
+        $producto->descripcion = $request->descripcion;
+        $producto->categoria_id = $request->categoria_id;
+        $producto->save();
+
+        return response()->json(["mensaje" => "Producto Modificado"], 201);
     }
 
     /**
@@ -80,7 +107,8 @@ class ProductoController extends Controller
      */
     public function destroy(Producto $producto)
     {
-        //
+        $producto->delete();
+        return response()->json(["mensaje" => "Producto Eliminado"], 201);
     }
 
     public function actualizarImagen(Request $request, $id)
