@@ -116,13 +116,13 @@ class ProductoController extends Controller
         if ($file = $request->file("imagen")) {
 
             $direccion_archivo = time() . "-" . $file->getClientOriginalName();
-            $file->move("imagenes/" . $direccion_archivo);
+            $file->move("imagenes/", $direccion_archivo);
 
             $producto = Producto::find($id);
             $producto->imagen = "imagenes/" . $direccion_archivo;
             $producto->save();
 
-            return response()->json(["mensaje" => "ImagenActualizada"]);
+            return response()->json(["mensaje" => "Imagen Actualizada"]);
         }
         return response()->json(["mensaje" => "Debe enviar una imagen"]);
     }
