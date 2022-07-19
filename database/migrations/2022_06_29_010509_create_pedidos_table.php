@@ -15,6 +15,13 @@ return new class extends Migration
     {
         Schema::create('pedidos', function (Blueprint $table) {
             $table->id();
+            $table->dateTime("fecha_pedido");
+            $table->integer("estado")->default(1);
+            $table->text("detalle")->nullable();
+
+            $table->bigInteger("cliente_id")->unsigned();
+            $table->foreign("cliente_id")->references("id")->on("clientes");
+
             $table->softDeletes();
             $table->timestamps();
         });

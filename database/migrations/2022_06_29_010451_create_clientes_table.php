@@ -15,8 +15,10 @@ return new class extends Migration
     {
         Schema::create('clientes', function (Blueprint $table) {
             $table->id();
-            $table->string("nombre");
-            $table->string("ci");
+            $table->string("nombre_completo", 100);
+            $table->string("ci_nit", 18)->nullable();
+            $table->string("telefono", 15)->nullable();
+            $table->string("direccion")->nullable();
 
             $table->softDeletes();
             $table->timestamps();
