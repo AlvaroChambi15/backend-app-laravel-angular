@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoriaController;
+use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\ProductoController;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
@@ -40,6 +41,7 @@ Route::middleware("auth:sanctum")->group(function () {
 
     Route::apiResource("categoria", CategoriaController::class);
     Route::apiResource("producto", ProductoController::class);
+    Route::apiResource("cliente", ClienteController::class);
 });
 
 Route::get("/no_autorizado", function () {
