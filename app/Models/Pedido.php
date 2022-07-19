@@ -14,4 +14,9 @@ class Pedido extends Model
     {
         return $this->BelongsToMany(Producto::class)->withPivot("cantidad")->withTimestamps();
     }
+
+    public function cliente()
+    {
+        return $this->belongsTo(Cliente::class);
+    }
 }

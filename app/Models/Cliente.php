@@ -10,4 +10,9 @@ class Cliente extends Model
 {
     use HasFactory;
     use SoftDeletes;
+
+    public function pedidos()
+    {
+        return $this->hasMany(Pedido::class);
+    }
 }

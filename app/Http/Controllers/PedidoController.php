@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pedido;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PedidoController extends Controller
 {
@@ -13,7 +15,8 @@ class PedidoController extends Controller
      */
     public function index()
     {
-        //
+        $pedidos = Pedido::with('cliente')->with('pedidos')->paginate(10);
+        return response()->json($pedidos, 200);
     }
 
     /**
@@ -24,7 +27,28 @@ class PedidoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        DB::begintransaction();
+        try {
+
+            $ped = new Pedido();
+            $ped->fecha_pedido = date("Y-m-d H:i:s");
+            $ped->cliente_id = $request->cliente_id;
+            $ped->save();
+
+            // ASIGNAR PRODUCTOS
+
+            foreach ($request->productos as $prod) {
+                $id = $prod["id"];
+                $cant = $prod["cantidad"];
+                $ped->productos()->attach($id, ["cantidad" => $cant]);
+            }
+            DB::commit();
+            return response()->json(["mensaje" => "Pedido Registrado!"], 201);
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return response()->json(["mensaje" => "Ocurrio un problema al registrar tu pedido!", "error" => $e], 422);
+        }
     }
 
     /**
