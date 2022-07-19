@@ -43,5 +43,5 @@ Route::middleware("auth:sanctum")->group(function () {
 });
 
 Route::get("/no_autorizado", function () {
-    return response()->json(["mensaje" => "No estas autorizado!"]);
+    return response()->json(["mensaje" => "NO ESTAS AUTORIZADO PARA VER ESTA PAGINA!"]);
 })->name("login");
