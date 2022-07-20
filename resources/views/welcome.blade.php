@@ -447,8 +447,9 @@
                     BA<small>KALY</small>
                 </h1>
                 <div
-                    style="margin-top:48px;color:white;height: 40px;width: 40px;display: table-cell;text-align: center;font-size:25px;vertical-align: middle;border: 3px solid white;outline: 3px solid black;border-radius: 100%;background: #ffffff00;">
-                    W</div>
+                    style="-webkit-text-stroke: 2px black;;margin-top:48px;color:white;height: 40px;width: 40px;display: table-cell;text-align: center;font-size:25px;vertical-align: middle;border: 3px solid rgb(158, 158, 158);;border-radius: 100%;background: #ffffff00;">
+                    <b>W</b>
+                </div>
             </div>
 
             <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
