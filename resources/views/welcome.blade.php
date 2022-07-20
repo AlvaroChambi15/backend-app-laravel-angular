@@ -514,7 +514,7 @@
                             </svg>
                             <div class="ml-4 text-lg leading-7 font-semibold"><a
                                     href="https://www.google.com/maps/place/Tienda+Surtida+KALY/@-16.5432597,-68.1961684,17z/data=!3m1!4b1!4m5!3m4!1s0x915edede33022f1f:0x70ecf015b5a40949!8m2!3d-16.5432649!4d-68.1939797?hl=es-419"
-                                    class="underline text-gray-900 dark:text-white">Ubicacion de la Casa</a></div>
+                                    class="underline text-gray-900 dark:text-white">Ubicación de la Casa</a></div>
                         </div>
 
                         <div class="ml-12">
