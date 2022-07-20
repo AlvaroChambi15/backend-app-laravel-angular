@@ -394,6 +394,24 @@
                 color: #6b7280;
                 color: rgba(107, 114, 128, var(--tw-text-opacity))
             }
+
+            /* mi mapa */
+
+            .map-responsive {
+                overflow: hidden;
+                padding-bottom: 300px;
+                /*Reduce este valor si el mapa fuera muy alto, por ejemplo 250px, puedes usar porcentajes, 50%*/
+                position: relative;
+                height: 0;
+            }
+
+            .map-responsive iframe {
+                left: 0;
+                top: 0;
+                height: 100%;
+                width: 100%;
+                position: absolute;
+            }
         }
     </style>
 
@@ -478,7 +496,8 @@
                             <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
                                 Por si algún día se pierden. 🙂
                             </div>
-                            <div>
+                            <hr>
+                            <div class="map-responsive">
                                 <iframe
                                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3824.6598829884415!2d-68.19820688395234!3d-16.543259715051107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x915edede33022f1f%3A0x70ecf015b5a40949!2sTienda%20Surtida%20KALY!5e0!3m2!1ses!2sbo!4v1658276531966!5m2!1ses!2sbo"
                                     width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
