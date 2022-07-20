@@ -31,7 +31,15 @@ class ClienteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $clie = new Cliente;
+
+        $clie->nombre_completo = $request->nombre_completo;
+        $clie->ci_nit = $request->ci_nit;
+        $clie->telefono = $request->telefono;
+        $clie->direccion = $request->direccion;
+        $clie->save();
+
+        return response()->json(["data" => $clie, "mensaje" => "Cliente Registrado!"], 201);
     }
 
     /**
