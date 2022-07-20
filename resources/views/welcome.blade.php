@@ -450,7 +450,7 @@
 
                         <div class="ml-12">
                             <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                <p>La Chelsy dice que la Luz es una Burra :V </p>
+                                <p>La Luz dice que la Chesly es una Burra :V </p>
                             </div>
                         </div>
                     </div>
