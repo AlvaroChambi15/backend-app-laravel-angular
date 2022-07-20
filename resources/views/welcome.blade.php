@@ -464,7 +464,7 @@
                                 </path>
                                 <path d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path>
                             </svg>
-                            <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laracasts.com"
+                            <div class="ml-4 text-lg leading-7 font-semibold"><a href=""
                                     class="underline text-gray-900 dark:text-white">Ubicacion de la Casa</a></div>
                         </div>
 
@@ -474,8 +474,8 @@
                             </div>
                             <div>
                                 <iframe
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d122389.11296580898!2d-68.32581563749997!3d-16.5432649!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x915edede33022f1f%3A0x70ecf015b5a40949!2sTienda%20Surtida%20KALY!5e0!3m2!1ses!2sbo!4v1658276060000!5m2!1ses!2sbo"
-                                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3824.6598829884415!2d-68.19820688395234!3d-16.543259715051107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x915edede33022f1f%3A0x70ecf015b5a40949!2sTienda%20Surtida%20KALY!5e0!3m2!1ses!2sbo!4v1658276531966!5m2!1ses!2sbo"
+                                    width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
                                     referrerpolicy="no-referrer-when-downgrade"></iframe>
                             </div>
                         </div>
