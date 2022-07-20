@@ -395,22 +395,46 @@
                 color: rgba(107, 114, 128, var(--tw-text-opacity))
             }
 
-            /* mi mapa */
+            /* MI MAPA */
 
-            .map-responsive {
+            #Iframe-Liason-Sheet {
+                max-width: 400px;
+                max-height: 300px;
                 overflow: hidden;
-                padding-bottom: 300px;
-                /*Reduce este valor si el mapa fuera muy alto, por ejemplo 250px, puedes usar porcentajes, 50%*/
-                position: relative;
-                height: 0;
             }
 
-            .map-responsive iframe {
-                left: 0;
-                top: 0;
-                height: 100%;
-                width: 100%;
+            /* inner wrapper: make responsive */
+            .responsive-wrapper {
+                position: relative;
+                height: 0;
+                /* gets height from padding-bottom setting */
+                -webkit-overflow-scrolling: touch;
+                overflow: auto;
+            }
+
+            .responsive-wrapper iframe {
                 position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                border: none;
+            }
+
+            /* padding-bottom = h/w as a % */
+            .responsive-wrapper-wxh-760x1200 {
+                padding-bottom: 300.6364%;
+            }
+
+            .iframe-border {
+                border: 1px solid #000;
+            }
+
+            .center-block-horiz {
+                margin-left: auto !important;
+                margin-right: auto !important;
             }
         }
     </style>
@@ -498,13 +522,16 @@
                                 Por si algún día se pierden. 🙂
                             </div>
                             <hr>
-                            <div class="map-responsive">
+                        </div>
+                        <div id="Iframe-Liason-Sheet" class="iframe-border center-block-horiz">
+                            <div class="responsive-wrapper responsive-wrapper-wxh-760x1200">
                                 <iframe
                                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3824.6598829884415!2d-68.19820688395234!3d-16.543259715051107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x915edede33022f1f%3A0x70ecf015b5a40949!2sTienda%20Surtida%20KALY!5e0!3m2!1ses!2sbo!4v1658276531966!5m2!1ses!2sbo"
                                     width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
                                     referrerpolicy="no-referrer-when-downgrade"></iframe>
                             </div>
                         </div>
+
                     </div>
 
                     {{-- <div class="p-6 border-t border-gray-200 dark:border-gray-700">
