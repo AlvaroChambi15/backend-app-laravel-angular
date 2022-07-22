@@ -28,6 +28,15 @@ class PedidoController extends Controller
     public function store(Request $request)
     {
 
+        /* {
+            cliente_id: 2,
+            productos: [
+                {id: 1, cantidad: 3},
+                {id: 3, cantidad: 2},
+                {id: 4, cantidad: 1},
+            ]
+        } */
+
         DB::begintransaction();
         try {
 
