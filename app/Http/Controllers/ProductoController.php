@@ -18,9 +18,9 @@ class ProductoController extends Controller
         if ($request->buscar or $request->buscar != null) {
             $productos = Producto::orWhere("nombre", "like", "%" . $request->buscar . "%")
                 ->orWhere("cantidad", "like", "%" . $request->buscar . "%")
-                ->with('categoria')->paginate(2);
+                ->with('categoria')->paginate(10);
         } else {
-            $productos = Producto::with('categoria')->paginate(2);
+            $productos = Producto::with('categoria')->paginate(10);
         }
 
 
