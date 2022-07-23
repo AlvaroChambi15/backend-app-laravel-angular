@@ -46,6 +46,8 @@ Route::middleware("auth:sanctum")->group(function () {
     Route::apiResource("pedido", PedidoController::class);
 });
 
+Route::get("/pdf", [PedidoController::class, "reportePedidos"]);
+
 Route::get("/no_autorizado", function () {
     return response()->json(["mensaje" => "NO ESTAS AUTORIZADO PARA VER ESTA PAGINA!"]);
 })->name("login");

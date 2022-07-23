@@ -36,3 +36,6 @@ POST http://127.0.0.1:8000/api/v1/auth/logout
 Content-Type: application/json
 Accept: application/json
 Authorization: Bearer 7|NIrS2wA87cYm76FUIoPSuyV9eJIxhDiCQjP7K2pB
+
+### PDF
+GET http://127.0.0.1:8000/api/pdf
