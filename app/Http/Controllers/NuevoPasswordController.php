@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -16,12 +17,24 @@ class NuevoPasswordController extends Controller
             "email" => "required|email"
         ]);
 
-        $status = Password::sendResetLink(
-            $request->only("email")
-        );
+        $email = User::where('email', 'LIKE', $request->email)->get();
 
-        if ($status == Password::RESET_LINK_SENT) {
-            return ['status' => __($status)];
+        // return response()->json($email, 202);
+
+        if (count($email) == 0) {
+            // SI NO EXISTE EL EMAIL
+            return response()->json(["mensaje" => "NO EXISTE", "datos" => $email], 404);
+        } else {
+            // SI EL EMAIL SI EXISTE
+            // return response()->json(["mensaje" => "El email SI existe!", "datos" => $email], 202);
+
+            $status = Password::sendResetLink(
+                $request->only("email")
+            );
+
+            if ($status == Password::RESET_LINK_SENT) {
+                return ['status' => __($status)];
+            }
         }
     }
 
