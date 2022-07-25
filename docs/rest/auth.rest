@@ -18,8 +18,8 @@ Content-Type: application/json
 Accept: application/json
 
 {
-    "email": "admin@gmail.com",
-    "password": "admin123"
+    "email": "alvaro@gmail.com",
+    "password": "alvaro123"
 }
 
 #### PERFIL
@@ -39,3 +39,25 @@ Authorization: Bearer 7|NIrS2wA87cYm76FUIoPSuyV9eJIxhDiCQjP7K2pB
 
 ### PDF
 GET http://127.0.0.1:8000/api/pdf
+
+### RESET PASSWORD POR EMAIL
+POST http://127.0.0.1:8000/api/recuperar-password
+Content-Type: application/json
+Accept: application/json
+
+{
+    "email" : "alvaro@gmail.com"
+}
+
+
+### RESET
+POST http://127.0.0.1:8000/api/reset-password
+Content-Type: application/json
+Accept: application/json
+
+{
+    "token" : "8d7f8eda89e92ea18d1a861225f137367177644cc99ba09a07e4a976ba0f6224",
+    "email" : "alvaro@gmail.com",
+    "password" : "alvaro321",
+    "password_confirmation" : "alvaro321"
+}

@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\NuevoPasswordController;
 use App\Http\Controllers\PedidoController;
 use App\Http\Controllers\ProductoController;
 
@@ -47,6 +48,12 @@ Route::middleware("auth:sanctum")->group(function () {
 });
 
 Route::get("/pdf", [PedidoController::class, "reportePedidos"]);
+
+
+Route::post("recuperar-password",  [NuevoPasswordController::class, "recuperarPassword"]);
+
+Route::post("reset-password",  [NuevoPasswordController::class, "reset"]);
+
 
 Route::get("/no_autorizado", function () {
     return response()->json(["mensaje" => "NO ESTAS AUTORIZADO PARA VER ESTA PAGINA!"]);
